@@ -1,4 +1,5 @@
 <?php
     
 require './PDO.php';
-echo getMenuDetail(1);
+$menu_id = $_POST['data'];
+echo getMenuDetail($menu_id);

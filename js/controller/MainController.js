@@ -1,28 +1,37 @@
-app.controller('MainCtrl', function ($scope, $rootScope, $filter, MainService) {
-    
+function getMainObject(mode, data) {
+    var object = {};
+    object['mode'] = mode;
+    object['data'] = data;
+    return object;
+}
+
+app.controller('MainCtrl', function ($scope, $rootScope, $filter, MainService, $http, $log) {
+
     $scope.menus = [];
     $scope.contents = [];
     $scope.selected_menu = {};
-    
-    $scope.getMenu = function(){
-        MainService.getMenu().then(function(response){
-          $scope.menus = response;
+
+    $scope.getMenu = function () {
+        var data = getMainObject();
+        MainService.getMenu(data).then(function (response) {
+            $scope.menus = response.data;
+        });
+
+    };
+
+    $scope.getMenuDetail = function (menu_id) {
+        var data = getMainObject('get_menu_detail', menu_id);
+        MainService.getMenuDetail(data).then(function (response) {
+            $scope.contents = response.data;
+            console.log(response.data);
         });
     };
-    
-    $scope.getMenuDetail = function(){
-        MainService.getMenuDetail().then(function(response){
-          $scope.contents = response;
-            console.log(response);
-        });
-    };
-    
-     $scope.chooseMenu = function(menu){
+
+    $scope.chooseMenu = function (menu) {
         $scope.selected_menu = menu;
-        console.log($scope.selected_menu);
-        
-        $scope.getMenuDetail();
+        $scope.getMenuDetail(menu.id);
     };
 
     $scope.getMenu();
+
 });
