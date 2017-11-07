@@ -7,19 +7,21 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Sale Manager</title>
+        <title> </title>
 
         <!-- Bootstrap core CSS -->
         <link href="bootstrap4/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="bootstrap4/dashboard.css" rel="stylesheet">
+        <!-- Font awesome-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="">Trang chủ</a>
+                <a class="navbar-brand" href="">Management</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Đăng xuất</a>
                         </li>
-                        
+
                     </ul>
                     <form class="form-inline mt-2 mt-md-0">
                         <input class="form-control mr-sm-2" type="text" placeholder="Nhập nội dung cần tìm" aria-label="Search">
@@ -68,11 +70,15 @@
                     <h1>Dashboard</h1>
 
                     <section class="row text-center placeholders">
+
                         <div class="col-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                            <h4>Sản phẩm</h4>
-                            <div class="text-muted">Quản lý sản phẩm</div>
+                            <a href="product.php">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                                <h4>Sản phẩm</h4>
+                                <div class="text-muted">Quản lý sản phẩm</div>
+                            </a>
                         </div>
+
                         <div class="col-6 col-sm-3 placeholder">
                             <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
                             <h4>Danh mục</h4>
@@ -96,19 +102,22 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Đơn giá</th>
+                                    <th>Ghi chú</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1,001</td>
-                                    <td>Lorem</td>
-                                    <td>ipsum</td>
-                                    <td>dolor</td>
-                                    <td>sit</td>
+                                    <td>Quần tây</td>
+                                    <td>120.000 đ</td>
+                                    <td>Quần âu lịch lãm</td>
+                                    <td>
+                                        <button class="btn btn-outline-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        <button class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
